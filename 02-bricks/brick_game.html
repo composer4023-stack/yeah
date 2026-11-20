@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>레부엘토 벽돌깨기</title>
+  <link rel="stylesheet" href="brick_game.css">
+  <script src="brick_game.js" defer></script>
+</head>
+<body>
+  <main class="game" aria-label="레부엘토 벽돌깨기">
+    <canvas width="1024" height="768" aria-label="서킷 경기장"></canvas>
+    <header>
+      <h1>레부엘토 <span>벽돌깨기</span></h1>
+      <div class="status" aria-live="polite"><span id="lives"></span><span id="remaining"></span><span id="fuel"></span></div>
+      <div class="actions">
+        <button id="nitro" type="button" disabled>니트로 · N</button>
+        <button id="sound" type="button" aria-pressed="true">소리 켜짐</button>
+      </div>
+    </header>
+    <section id="message" class="message" aria-live="polite">
+      <img id="miss-image" src="assets/miss.png" alt="공을 놓쳤을 때 나오는 만화 이미지" hidden>
+      <h2></h2>
+      <p></p>
+    </section>
+    <footer>← → 엔진 이동 <span>스페이스바 · 공 발사</span> N · 니트로 <span>연료통 3개 · 니트로 +1</span></footer>
+  </main>
+</body>
+</html>

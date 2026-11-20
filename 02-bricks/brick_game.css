@@ -1,0 +1,66 @@
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  height: 100dvh;
+  display: grid;
+  place-items: center;
+  background: #08090b;
+  color: #f9f5ef;
+  font-family: system-ui, "맑은 고딕", sans-serif;
+}
+.game {
+  position: relative;
+  width: min(100vw, 100%, calc(100dvh * 4 / 3), 1024px);
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  isolation: isolate;
+  container-type: inline-size;
+  box-shadow: 0 0 0 1px #3a2b22, 0 12px 70px #000;
+}
+canvas { display: block; width: 100%; height: 100%; }
+header, footer {
+  position: absolute;
+  inset-inline: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #101115ed;
+  font-size: 1.65cqw;
+}
+header { top: 0; height: 8%; padding: 0 2.9%; border-bottom: 1px solid #644127; }
+h1 { margin: 0; font-size: 2.55cqw; letter-spacing: -.04em; }
+h1 span { color: #ff9446; }
+.status, .actions { display: flex; align-items: center; gap: 1.25cqw; }
+.status { color: #ffe0c7; font-variant-numeric: tabular-nums; }
+button {
+  font: inherit;
+  font-weight: 700;
+  color: #fff4e9;
+  border: 1px solid #795038;
+  border-radius: .65cqw;
+  background: #302119;
+  padding: .65cqw 1cqw;
+  cursor: pointer;
+}
+button:disabled { color: #c3b4a9; background: #252329; cursor: default; }
+button:focus-visible { outline: 2px solid #fff; outline-offset: 3px; }
+footer { bottom: 0; height: 5%; justify-content: center; gap: 3cqw; color: #d5cbc3; border-top: 1px solid #4f382a; }
+.message {
+  position: absolute;
+  left: 50%;
+  top: 70%;
+  transform: translate(-50%, -50%);
+  min-width: 37%;
+  padding: 2cqw 3.2cqw;
+  text-align: center;
+  border: 1px solid #ba6b3b;
+  border-radius: 1.2cqw;
+  background: #100e12ee;
+  box-shadow: 0 0 3cqw #000a;
+  pointer-events: none;
+}
+.message:has(img:not([hidden])) { top: 51%; }
+.message h2 { margin: 0; font-size: 4cqw; }
+.message p { margin: .6cqw 0 0; font-size: 1.9cqw; color: #ffc895; }
+.message img { width: 24cqw; height: 17cqw; object-fit: contain; }
+[hidden] { display: none !important; }
